@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block extra_css %}
+<link href="{% static 'css/usersignup.css' %}" rel="stylesheet">
+{% endblock extra_css %}
+ 
+ {% block content %} 
+ <div class="signup-container">
+    {% if messages %}
+    {% for message in messages %}
+       
+            {{ message }}
+            
+        </div>
+    {% endfor %}
+{% endif %}
+    <h1>SIGN UP</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-green w-100 mt-3">Sign Up</button>
+    </form>
+    <a href="{% url 'userlogin' %}" class="login">Already have an account? Login</a>
+  </div>
+
+ {% endblock content%}
+  
+   
+    
+   
+ 
+
+
