@@ -9,7 +9,7 @@ urlpatterns = [
     path('userhome/',v.Userhome,name='Userhome'),
     path('user_logout/',v.user_logout,name='user_logout'),
     path('addbook/',v.AddBook,name='addbook'),
-    path('details/',v.Details,name='details'),
+    path('details<int:pk>/',v.Details,name='details'),
     path('update/<int:pk>/',v.Update,name='update'),
     path('delete/<int:pk>/',v.Book_delete,name='delete'),
 

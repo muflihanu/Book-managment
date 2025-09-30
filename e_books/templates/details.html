@@ -6,23 +6,22 @@
 {% block content %}
 <div class="container mt-5">
     <h1 class="text-center mb-4 text-success">Book Details</h1>
-    <div class="row">
-        {% for b in books %}
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm h-100">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
                 <div class="card-body">
-                    <h5 class="card-title">{{ b.title }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ b.author }}</h6>
-                    <p class="card-text"><strong>Published:</strong> {{ b.published_date }}</p>
-                    <p class="card-text">{{ b.description }}</p>
-                    <a href="{% url 'update' b.id %}" class="btn btn-success btn-sm me-2">Update</a>
-                    <a href="{% url 'delete' b.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    <h5 class="card-title">{{ books.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ books.author }}</h6>
+                    <p class="card-text"><strong>Published:</strong> {{ books.published_date }}</p>
+                    <p class="card-text">{{ books.description }}</p>
+                    <div class="mt-3">
+                        <a href="{% url 'update' books.id %}" class="btn btn-success btn-sm me-2">Update</a>
+                        <a href="{% url 'delete' books.id %}" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="{% url 'Userhome' %}" class="btn btn-secondary btn-sm">Back to Home</a>
+                    </div>
                 </div>
             </div>
         </div>
-        {% empty %}
-        <p>No books available.</p>
-        {% endfor %}
     </div>
 </div>
 {% endblock content %}

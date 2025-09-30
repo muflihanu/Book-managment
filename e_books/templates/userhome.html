@@ -22,7 +22,7 @@
         <li class="list-group-item item ">
             {{ b.title }} by {{ b.author }}
             <br>
-            <a href="{% url 'details' %}" class="btn btn-success me-5">DETAILS</a>
+            <a href="{% url 'details' b.id %}" class="btn btn-success me-5">DETAILS</a>
 
         </li>
         {% empty %}

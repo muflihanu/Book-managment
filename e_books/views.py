@@ -89,11 +89,11 @@ def AddBook(request):
     return render(request, "addbook.html", {"form": form})
 
 
-def Details(request):
+def Details(request,pk):
     user_id = request.session.get('user_id')
     if not user_id:
         return redirect('userlogin')
-    books = Book.objects.filter(user_id=user_id)
+    books = get_object_or_404(Book,pk=pk)
     return render(request, "details.html", {"books": books})    
 
     
