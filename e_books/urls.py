@@ -4,8 +4,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+#user registrations
     path('',v.Usersignup,name='usersignup'),
     path('userlogin/',v.Userlogin,name='userlogin'),
+
+#other urls
     path('userhome/',v.Userhome,name='Userhome'),
     path('user_logout/',v.user_logout,name='user_logout'),
     path('addbook/',v.AddBook,name='addbook'),

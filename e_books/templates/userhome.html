@@ -23,10 +23,9 @@
             {{ b.title }} by {{ b.author }}
             <br>
             <a href="{% url 'details' b.id %}" class="btn btn-success me-5">DETAILS</a>
-
         </li>
-        {% empty %}
-        <li class="list-group-item">No books available.</li>
+         {% empty %}
+         <li class="list-group-item">No books available.</li>
         {% endfor %}
     </ul>
 </div>

@@ -1,6 +1,10 @@
 from django import forms
 from django.forms import widgets
 from .models import Userregistration,Book
+
+
+
+#user registration form
 class User_registrationForm(forms.ModelForm):
     class Meta:
         model = Userregistration
@@ -20,6 +24,9 @@ class User_registrationForm(forms.ModelForm):
             }),
         }
 
+
+
+#login form
 class User_loginForm(forms.Form):
     email = forms.EmailField(
         widget=forms.EmailInput(attrs={
@@ -36,7 +43,7 @@ class User_loginForm(forms.Form):
 
       
 
-
+#book form
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book

@@ -7,6 +7,8 @@ from .models import Userregistration, Book
 from .forms import User_registrationForm,User_loginForm, BookForm
 from .email_utils import send_registration_email
 
+
+#user registration
 def Usersignup(request):
     if request.method == 'POST':
         form = User_registrationForm(request.POST)
@@ -36,6 +38,8 @@ def Usersignup(request):
     return render(request, "usersignup.html", {'form': form})
 
 
+
+#user login fun
 def Userlogin(request):
     if request.method == 'POST':
         form = User_loginForm(request.POST)
@@ -59,10 +63,13 @@ def Userlogin(request):
     return render(request, "userlogin.html", {'form': form})
 
 
+#logout
 def user_logout(request):
     logout(request)
     return redirect('userlogin')    
 
+
+# main home fun 
 def Userhome(request):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -72,7 +79,7 @@ def Userhome(request):
 
  
 
-
+# adding books
 def AddBook(request):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -89,6 +96,7 @@ def AddBook(request):
     return render(request, "addbook.html", {"form": form})
 
 
+#show the details of the books
 def Details(request,pk):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -98,7 +106,7 @@ def Details(request,pk):
 
     
 
-
+# update the book
 def Update(request,pk):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -115,6 +123,7 @@ def Update(request,pk):
 
 
 
+#delete the book
 def Book_delete(request,pk):
     user_id = request.session.get('user_id')
     if not user_id:

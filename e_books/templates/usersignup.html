@@ -8,12 +8,10 @@
  <div class="signup-container">
     {% if messages %}
     {% for message in messages %}
-       
-            {{ message }}
-            
-        </div>
+            {{ message }}           
+ </div>
     {% endfor %}
-{% endif %}
+    {% endif %}
     <h1>SIGN UP</h1>
     <form method="post">
       {% csrf_token %}
